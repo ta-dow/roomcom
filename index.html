@@ -6,48 +6,75 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </head>
     <body>
-    	<center>
-    		<br><br><br>
-    		<h1>House Shopping List</h1>
-    		<br><br>
-    		<div class="card" style="width: 90%; max-width: 600px">
-    		  	<div class="card-body">
-    		    	<h5 class="card-title">Card title</h5>
-    		    	<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    		    	<ul class="list-group">
-    		      		<li class="list-group-item form-inline">
-    		      			<div class="form-check float-left">
-    		      			  	<label class="form-check-label">
-	    		      			  	<input class="form-check-input" type="checkbox">
-    		      			    	Toilet paper
-    		      			  	</label>
-    		      			</div>
-    		      			<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-    		      		</li>
-    		      		<li class="list-group-item form-inline">
-    		      			<div class="form-check float-left">
-    		      			  	<label class="form-check-label">
-	    		      			  	<input class="form-check-input" type="checkbox">
-    		      			    	Cheese
-    		      			  	</label>
-    		      			</div>
-    		      			<button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
-    		      		</li>
-    		      		<li class="list-group-item form-inline">
-    		      			<div class="form-check float-left">
-    		      			  	<label class="form-check-label">
-	    		      			  	<input class="form-check-input" type="checkbox" disabled>
-	    		      			  	<input class="form-control" type="text" placeholder="Add new...">
-    		      			  	</label>
-    		      			</div>
-    		      		</li>
-    		    	</ul>
-    		    	<!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-    		  	</div>
-    		</div>
-    	</center>
+        <center>
+            <br><br><br>
+            <h1>House Shopping List</h1>
+            <br><br>
+            <div class="card" style="width: 90%; max-width: 600px">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <ul class="list-group">
+                        <li class="list-group-item form-inline">
+                            <div class="form-check float-left">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox">&nbsp;
+                                    Toilet paper
+                                </label>
+                            </div>
+                            <button type="button" class="close"> 
+                                <span aria-hidden="true">&times;</span> 
+                            </button>
+                        </li>
+                        <li class="list-group-item form-inline">
+                            <div class="form-check float-left">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox">&nbsp;
+                                    Cheese
+                                </label>
+                            </div>
+                            <button type="button" class="close"> 
+                                <span aria-hidden="true">&times;</span> 
+                            </button>
+                        </li>
+                        <li class="list-group-item form-inline">
+                            <div class="form-check float-left">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="checkbox" disabled>&nbsp;
+                                    <input class="form-control" style="width: 450px; border: 0" type="text" placeholder="Add new...">
+                                </label>
+                            </div>
+                            <button type="button" class="close"> 
+                                <span aria-hidden="true">+</span> 
+                            </button>
+                        </li>
+                    </ul>
+                    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+                </div>
+            </div>
+        </center>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+        <script>
+            function add(a, b) {
+                return a + b
+            }
+            const c = add(1, 2)
+            console.log(c)
+
+
+            
+            // the variable "freds aka. delete_buttons" is defined as the list (a collection of values) of all the dom elements that match the selector "button.close"
+            const freds = document.querySelectorAll('button.close')
+            // the variable "fred" is defined as the button
+            // dictionaries and objects are the same; they are a collection of key:value pairs; you can't have duplicate keys
+            for (const fred of freds) {
+                fred.addEventListener('click', function(event) {
+                    const clicked_fred = event.target.parentElement.parentElement
+                    console.log('fred was clicked, fred is happy', clicked_fred)
+                })
+            }
+        </script>
     </body>
 </html>
